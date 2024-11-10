@@ -3,75 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Without Password</title>
+    <title>Login Page</title>
     
 </head>
 <body>
-    <div class="container">
-        <div class="login-container">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <div>
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" required>
-                </div>
-                <button type="submit">Login</button>
-            </form>
-            <div id="message"></div>
-            <div id="profile" class="hidden">
-                <h3>Profile Information</h3>
-                <p><strong>Nama:</strong> <span id="profileName"></span></p>
-                <p><strong>Rank:</strong> <span id="profileRank"></span></p>
-                <p><strong>Status:</strong> <span id="profileStatus"></span></p>
-                <p><strong>Tanggal Bergabung:</strong> <span id="profileJoinDate"></span></p>
-                <p><strong>Nomor WA:</strong> <span id="profileWhatsApp"></span></p>
-            </div>
-            <button id="adminButton">Go to Admin Login Page</button>
-        </div>
-        <div class="admin-container hidden">
-            <h2>Admin Login Page</h2>
-            <form id="adminLoginForm">
-                <div>
-                    <label for="adminUsername">Admin Username:</label>
-                    <input type="text" id="adminUsername" required>
-                </div>
-                <div>
-                    <label for="adminPassword">Admin Password:</label>
-                    <input type="password" id="adminPassword" required>
-                </div>
-                <button type="submit">Login as Admin</button>
-            </form>
-            <div id="adminMessage"></div>
-            <button id="backToUserLogin">Back to User Login</button>
-        </div>
-        <div class="admin-area hidden">
-            <h2>Admin Area</h2>
-            <form id="adminForm">
-                <div>
-                    <label for="newUsername">Add Username:</label>
-                    <input type="text" id="newUsername" required>
-                </div>
-                <div>
-                    <label for="rank">Rank:</label>
-                    <input type="text" id="rank" required>
-                </div>
-                <div>
-                    <label for="status">Status:</label>
-                    <input type="text" id="status" required>
-                </div>
-                <div>
-                    <label for="joinDate">Join Date:</label>
-                    <input type="date" id="joinDate" required>
-                </div>
-                <div>
-                    <label for="whatsApp">WhatsApp:</label>
-                    <input type="text" id="whatsApp" required>
-                </div>
-                <button type="submit">Add User</button>
-            </form>
-            <div id="userMessage"></div>
-        </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+        </form>
     </div>
+
+    <div id="userInfo" class="user-info" style="display:none;">
+        <h2>User Info</h2>
+        <p><strong>Nama:</strong> <span id="userName"></span></p>
+        <p><strong>Rank:</strong> <span id="userRank"></span></p>
+        <p><strong>Status:</strong> <span id="userStatus"></span></p>
+        <p><strong>Tanggal:</strong> <span id="userDate"></span></p>
+        <p><strong>Nomor WA:</strong> <span id="userPhone"></span></p>
+    </div>
+
     
 </body>
 </html>
