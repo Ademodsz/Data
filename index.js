@@ -1,29 +1,24 @@
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    // Simulated user data
-    const userData = {
-        username: 'user123',
-        password: 'pass123',
-        name: 'John Doe',
-        rank: 'Admin',
-        status: 'Active',
-        date: '2023-10-18',
-        phone: '08123456789'
+    var username = document.getElementById('login-username').value;
+    var password = document.getElementById('login-password').value;
+
+    // Check against predefined usernames and passwords
+    var users = {
+        'Ademods': { password: 'adeazil', rank: 'Rank 1', birthday: '01-01-2000', phone: '08123456789' },
+        'ade_cosmic': { password: 'ade', rank: 'Rank 2', birthday: '02-02-1999', phone: '08987654321' }
     };
 
-    if (username === userData.username && password === userData.password) {
-        document.querySelector('.login-container').style.display = 'none';
+    if (users[username] && users[username].password === password) {
+        // If credentials are correct, display user information
+        document.getElementById('userName').textContent = username;
+        document.getElementById('userRank').textContent = users[username].rank;
+        document.getElementById('userBirthday').textContent = users[username].birthday;
+        document.getElementById('userPhone').textContent = users[username].phone;
         document.getElementById('userInfo').style.display = 'block';
-        document.getElementById('userName').innerText = userData.name;
-        document.getElementById('userRank').innerText = userData.rank;
-        document.getElementById('userStatus').innerText = userData.status;
-        document.getElementById('userDate').innerText = userData.date;
-        document.getElementById('userPhone').innerText = userData.phone;
+        document.querySelector('.login').style.display = 'none'; // Hide login form
     } else {
-        alert('Username or password is incorrect');
+        alert('Invalid username or password');
     }
 });
